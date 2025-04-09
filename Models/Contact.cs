@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Module8_ContactListAppMVVM.Models
 {
-	internal class Contact
+	public class Contact
 	{
+		public string Name { get; set; }
+		public string Email { get; set; }
+		public string Phone { get; set; }
+		public string Description { get; set; }
 	}
 }
