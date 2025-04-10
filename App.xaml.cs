@@ -8,7 +8,9 @@ namespace Module8_ContactListAppMVVM
     public partial class App : Application
     {
 
-        public App()
+		public static ObservableCollection<Models.Contact> ContactsCollection { get; } = new ObservableCollection<Models.Contact>();
+
+		public App()
         {
             InitializeComponent();
 		}
