@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module8_ContactListAppMVVM.Views.ContactsPage"
+             Title="Contacts">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <!-- Button to MainPage (add contacts) -->
+            <Button Text="Add New Contact" Command="{Binding GoToAddContactPageCommand}" />
+            
+            <!-- Display Contact(s) -->
+            <CollectionView ItemsSource="{Binding Contacts}"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedContact}">
+
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="15">
+                            
+                            <!-- Display Name/Email per Contact -->
+                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Text="{Binding Email}" />
+
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
