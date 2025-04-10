@@ -4,12 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Module8_ContactListAppMVVM"
+    xmlns:views="clr-namespace:Module8_ContactListAppMVVM.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="Module8_ContactListAppMVVM">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        Title="Add Contact"
+        ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Contacts"
+        ContentTemplate="{DataTemplate views:ContactsPage}"
+        Route="ContactsPage" />
+
+
+    <ShellContent
+        Title="Contacts"
+        ContentTemplate="{DataTemplate views:ContactDetailsPage}"
+        Route="ContactDetailsPage" />
+
 
 </Shell>
