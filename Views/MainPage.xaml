@@ -1,11 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Module8_ContactListAppMVVM.MainPage">
+             x:Class="Module8_ContactListAppMVVM.Views.MainPage"
+             Title="Add Contact">
 
     <ScrollView>
-        <VerticalStackLayout
-            
+        <VerticalStackLayout Padding="20">
+
+            <!-- Name Field -->
+            <Label Text="Name" />
+            <Entry Text="{Binding Name}" Placeholder="{Binding NamePlaceholder}" PlaceholderColor="{Binding NamePlaceholderColor}" />
+
+            <!-- Email Field -->
+            <Label Text="Email" />
+            <Entry Text="{Binding Email}" Placeholder="{Binding EmailPlaceholder}" PlaceholderColor="{Binding EmailPlaceholderColor}" />
+
+            <!-- Phone Field -->
+            <Label Text="Phone" />
+            <Entry Text="{Binding Phone}" Placeholder="{Binding PhonePlaceholder}" PlaceholderColor="{Binding PhonePlaceholderColor}" />
+
+            <!-- Description Field -->
+            <Label Text="Description" />
+            <Entry Text="{Binding Description}" Placeholder="Optional" PlaceholderColor="Gray" />
+
+
+            <!-- Save Button -->
+            <Button Text="SAVE" Command="{Binding SaveContactsAsyncCommand}" />
+
         </VerticalStackLayout>
     </ScrollView>
 
