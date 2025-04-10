@@ -8,10 +8,6 @@ namespace Module8_ContactListAppMVVM
     public partial class App : Application
     {
 
-        // Share contact list for every page in the app
-        public static ObservableCollection<Models.Contact> ContactsCollection { get; } = new ObservableCollection<Models.Contact>();
-
-
         public App()
         {
             InitializeComponent();
