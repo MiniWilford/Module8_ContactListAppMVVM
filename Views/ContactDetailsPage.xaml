@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module8_ContactListAppMVVM.Views.ContactDetailsPage"
+             Title="Contact Details">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            
+            <!-- Display Contact Information and only allow edit if user toggles the edit button -->
+            <Label Text="Name" />
+            <Entry Text="{Binding CurrentContact.Name}" IsEnabled="{Binding IsBeingEdited}" />
+
+            <Label Text="Email" />
+            <Entry Text="{Binding CurrentContact.Email}" IsEnabled="{Binding IsBeingEdited}" />
+
+            <Label Text="Phone #" />
+            <Entry Text="{Binding CurrentContact.Phone}" IsEnabled="{Binding IsBeingEdited}" />
+
+            <Label Text="Description" />
+            <Entry Text="{Binding CurrentContact.Description}" IsEnabled="{Binding IsBeingEdited}" />
+
+            
+            <!-- Edit Button (hide when editing) -->
+            <Button Text="Edit" Command="{Binding EditContactCommand}" />
+            
+            <!-- Save Button (show when editing) -->
+            <Button Text="Save" Command="{Binding SaveContactChangesCommand}" IsVisible="{Binding IsBeingEdited}" />
+            
+            <!-- Back Button (Previous Page) -->
+            <Button Text="Back" Command="{Binding GoBackCommand}" />
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
